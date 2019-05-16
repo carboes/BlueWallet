@@ -1,3 +1,4 @@
+import React from 'react';
 import { createStackNavigator, createAppContainer } from 'react-navigation';
 
 import Settings from './screen/settings/settings';
@@ -42,6 +43,15 @@ import LNDCreateInvoice from './screen/lnd/lndCreateInvoice';
 import LNDViewInvoice from './screen/lnd/lndViewInvoice';
 import LNDViewAdditionalInvoiceInformation from './screen/lnd/lndViewAdditionalInvoiceInformation';
 
+import Vimba from './Vimba';
+
+const vimbaNavigationHeaderProps = {
+  headerTitle: <Vimba />,
+  headerStyle: {
+    backgroundColor: '#777777',
+  },
+};
+
 const ReorderWalletsStackNavigator = createStackNavigator({
   ReorderWallets: {
     screen: ReorderWallets,
@@ -53,6 +63,9 @@ const WalletsStackNavigator = createStackNavigator(
     Wallets: {
       screen: WalletsList,
       path: 'wallets',
+      navigationOptions: {
+        ...vimbaNavigationHeaderProps,
+      },
     },
     WalletTransactions: {
       screen: WalletTransactions,
@@ -79,6 +92,7 @@ const WalletsStackNavigator = createStackNavigator(
           elevation: 0,
         },
         headerTintColor: '#0c2550',
+        ...vimbaNavigationHeaderProps,
       },
     },
     Currency: {

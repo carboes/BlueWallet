@@ -1,5 +1,5 @@
 import React from 'react';
-import { Linking, AppState, Clipboard, StyleSheet, KeyboardAvoidingView, Platform, View } from 'react-native';
+import { Linking, AppState, Clipboard, StyleSheet, KeyboardAvoidingView, Platform, View, StatusBar } from 'react-native';
 import AsyncStorage from '@react-native-community/async-storage';
 import Modal from 'react-native-modal';
 import { NavigationActions } from 'react-navigation';
@@ -255,6 +255,7 @@ export default class App extends React.Component {
   render() {
     return (
       <View style={{ flex: 1 }}>
+        <StatusBar barStyle="light-content" />
         <MainBottomTabs
           ref={nav => {
             this.navigator = nav;

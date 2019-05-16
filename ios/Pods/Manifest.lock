@@ -30,7 +30,7 @@ PODS:
     - React
   - react-native-randombytes (3.5.2):
     - React
-  - react-native-slider (1.1.0):
+  - react-native-slider (1.0.4):
     - React
   - react-native-webview (5.8.1):
     - React
